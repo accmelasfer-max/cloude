@@ -1,0 +1,30 @@
+[
+ {
+  "key": "linkedin",
+  "prompt": "LinkedIn Jobs (sa.linkedin.com/jobs/search and /jobs/view). Search each track title (English and Arabic) with location Riyadh then Saudi Arabia, f_TPR=r259200 then r604800. Include ONLY sa.linkedin.com/jobs/view/... URLs."
+ },
+ {
+  "key": "bayt",
+  "prompt": "Bayt.com (bayt.com/en and /ar saudi-arabia jobs). Search each track title in English and Arabic; Riyadh first. Individual posting URLs only. Pages may be bot-blocked: use search-engine snippets and r.jina.ai."
+ },
+ {
+  "key": "gulftalent_naukrigulf",
+  "prompt": "GulfTalent and Naukrigulf. Search each track title. Individual posting URLs only; use r.jina.ai when blocked."
+ },
+ {
+  "key": "indeed_glassdoor",
+  "prompt": "Indeed Saudi (sa.indeed.com) and Glassdoor Saudi jobs. Search each track title in English and Arabic. Individual posting URLs only."
+ },
+ {
+  "key": "employers",
+  "prompt": "Career pages/ATS of Saudi contracting, O&M, facilities, e-commerce, retail, F&B, car-rental and trading companies (Nesma, Almabani, Al Bawani, alfanar, Initial Saudi, Tamimi, Alkifah, Noon, Jarir, Extra, Nice One, Floward, Sary, Ninja, Nahdi, BinDawood, Panda, Herfy, Kudu, AlBaik, Yelo, Key, Theeb, Lumi). Accountant / senior accountant / project or cost accountant / AR-AP / e-commerce accountant roles. Direct posting URLs."
+ },
+ {
+  "key": "agencies",
+  "prompt": "Recruitment agencies and staffing firms active in KSA for accountant-level roles (Tamkeen HR, Nadia Global, Kinetic, Hays, Michael Page, Charterhouse, Mackenzie Jones, Propel, Antal, Salt, Jobs for Humanity, Hire Resolve, iHR, imploy) plus Workable/Zoho Recruit/SmartRecruiters-hosted KSA accountant postings. Direct posting URLs."
+ },
+ {
+  "key": "arabic_boards",
+  "prompt": "Arabic-title boards and aggregators: SaudiJobs24, Sabbar, Mourjan, Wzayef.net, Jobs-Arab, Wadhefa, Tanqeeb, Jadarat, Google Jobs, Monster Gulf, Foundit. Search Arabic titles (محاسب عام، محاسب مالي، محاسب أول، محاسب مشاريع، محاسب تكاليف، محاسب مقاولات، محاسب متجر إلكتروني، محاسب مطاعم) and English. Follow through to original posting URLs. Skip ads saying للسعوديين فقط."
+ }
+]
