@@ -1,0 +1,5 @@
+*.pdf
+generator/html/
+generator/db_updates/
+fonts/*.woff2
+node_modules/

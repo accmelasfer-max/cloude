@@ -1,0 +1,125 @@
+{
+  "name": "MOHAMED EL ASFAR",
+  "contact": {
+    "city": "Riyadh, Saudi Arabia",
+    "phone": "+966 57 020 5701",
+    "email": "acc.m.elasfar@gmail.com",
+    "linkedin": "linkedin.com/in/mhamdi1992"
+  },
+  "achievements": {
+    "team": "Led a finance and accounting team of up to 15 staff, owning the full cycle from transaction processing through to audited financial statements.",
+    "close": "Cut the monthly close from 10 to 5 working days by standardising the closing checklist, reconciliation templates and cut-off procedures.",
+    "returns": "Prepared, reviewed and filed 40+ VAT and Withholding Tax returns annually alongside Zakat and Income Tax declarations, maintaining a 100% on-time record with no late-filing or assessment penalties.",
+    "misstatements": "Identified and corrected accounting misstatements exceeding SAR 1.5 million in aggregate — misclassified revenue and expenses, unrecorded accruals and incorrect VAT/WHT treatment — before financial statements were issued, reducing external-audit adjustments to immaterial levels.",
+    "automation": "Automated recurring reporting, reconciliation and closing workpapers and introduced AI-assisted research and review into the team's workflow, cutting manual preparation time on routine deliverables and shortening turnaround on standards and tax questions.",
+    "portfolio": "Oversee bookkeeping, reporting and tax review for a portfolio of 20+ client entities across services, trading, contracting and healthcare."
+  },
+  "competencies": {
+    "reporting": ["Financial Reporting & Control", "IFRS-based financial statements preparation and review • Month-end and year-end close • Multi-entity consolidation and eliminations • Management reporting packs • Budgeting, forecasting and variance analysis • Cash-flow management • Full-cycle accounting: GL, AP/AR, fixed assets, accruals, inventory, payroll and end-of-service"],
+    "tax": ["Tax & Regulatory Compliance (KSA)", "VAT returns, reviews and reconciliation to the GL • Withholding Tax computation and filing • Zakat and Corporate Income Tax returns • ZATCA correspondence, queries, audits and assessments • Tax risk assessment and position papers • Compliance calendars and filing controls"],
+    "audit": ["Audit Support & Error Detection", "External audit coordination and audit readiness • Audit-ready supporting schedules • Control-account and reconciliation review • Detection of accounting and tax misstatements, root-cause analysis and correction • Accounting workflow and closing-procedure standardisation"],
+    "ai": ["AI & Finance Automation", "Applied use of AI tools (Claude, ChatGPT) for accounting-standards and tax research, document review and bilingual drafting • Automation of recurring reporting, reconciliation and closing workpapers • Template- and formula-driven workbooks replacing manual processes • Enabling team members on AI-assisted finance workflows"],
+    "systems": ["Systems & Analytics", "Odoo • Oracle • Microsoft Dynamics • QuickBooks • Zoho Books • Advanced Excel (financial modelling, Power Query, formula-driven models) • Power BI"]
+  },
+  "experience": {
+    "takamol": {
+      "title": "Financial Consultant", "company": "Takamol Business Services", "place": "Riyadh, Saudi Arabia", "dates": "2023 – Present",
+      "blurb": "Semi-government technology and consulting group operating national labour-market digital platforms (Qiwa, Musaned, Ajeer) used by employers across Saudi Arabia.",
+      "bullets": [
+        "Support the finance function across the monthly close, management reporting and the full reconciliation cycle (GL, AP/AR, accruals, prepayments, fixed assets and bank), producing audit-ready schedules and variance, cash-flow and working-capital analysis for management.",
+        "Prepare and review VAT and Withholding Tax positions, Zakat and Income Tax requirements; reconcile declared figures to the general ledger and prepare the documentation and responses required by ZATCA.",
+        "Detect and correct accounting misstatements before financial statements are issued — misclassified revenue and expenses, unrecorded accruals, incorrect VAT/WHT treatment and unreconciled control accounts — keeping external-audit adjustments at immaterial levels.",
+        "Reconcile high-volume, transaction-based platform revenue and receivables, tracing differences between operational platform data and the general ledger to source.",
+        "Identify process gaps in the reporting cycle, standardise accounting workflows and closing procedures, and coordinate with stakeholders to close reporting and compliance issues.",
+        "Build formula-driven Excel models and reconciliation schedules with embedded control totals and integrity checks, replacing manual hard-coded workbooks, and apply AI tools to research accounting standards and ZATCA guidance and to review documents and correspondence."
+      ]
+    },
+    "binsalamah": {
+      "title": "Bookkeeping Department Manager", "company": "Bin Salamah & Al-Zamil Certified Public Accountants", "place": "Riyadh, Saudi Arabia", "dates": "2023 – Present (concurrent)",
+      "blurb": "Licensed Saudi certified public accountants and audit firm.",
+      "bullets": [
+        "Head the bookkeeping department and its team, overseeing an outsourced accounting portfolio of 20+ client entities — transaction processing, ledger maintenance, monthly reconciliations and periodic financial statements across services, trading, contracting and healthcare.",
+        "Review client VAT and Withholding Tax returns before submission, confirming that declared figures reconcile to the underlying books and that supporting documentation meets ZATCA requirements.",
+        "Set the department's bookkeeping standards — chart-of-accounts structures, posting rules, closing checklists and review procedures — and perform quality control on client files before release to the client or to audit."
+      ]
+    },
+    "rashof": {
+      "title": "Accounting Manager", "company": "Rashof Company", "place": "Riyadh, Saudi Arabia", "dates": "2021 – 2023",
+      "bullets": [
+        "Led the full accounting cycle for a business with annual turnover of approximately SAR 60 million, managing a team of up to 15 staff across GL, AP/AR, payroll, fixed assets, accruals, inventory and monthly close.",
+        "Reduced the monthly close from 10 to 5 working days by introducing a standardised closing checklist, reconciliation templates and cut-off controls.",
+        "Owned VAT and WHT compliance end to end — return preparation, reconciliation to the GL, supporting documentation and responses to ZATCA — with no filing penalties during tenure.",
+        "Prepared annual financial statements and Zakat filings and coordinated the external audit: supporting schedules, sample requests and resolution of audit findings.",
+        "Introduced review and verification procedures across purchasing, payments and inventory that reduced recurring posting errors and improved record accuracy; produced rolling cash-flow forecasts guiding payment prioritisation and liquidity decisions."
+      ]
+    },
+    "alrazi": {
+      "title": "Senior Accountant", "company": "Al-Razi Medical Company", "place": "Dammam, Saudi Arabia", "dates": "2017 – 2021",
+      "bullets": [
+        "Owned the monthly reconciliation cycle across 6 branches and warehouses — bank, supplier, customer, VAT, inventory movement and period-end adjustment accounts.",
+        "Investigated and cleared long-standing differences in control accounts and inventory records, realigning operational data with the general ledger.",
+        "Prepared financial schedules, variance analysis and budget-versus-actual reporting; supervised payroll processing and warehouse inventory counts and mentored 4 junior accountants."
+      ]
+    },
+    "binsammar": {
+      "title": "Accountant", "company": "Bin Sammar Contracting Company", "place": "Riyadh, Saudi Arabia", "dates": "2015 – 2017",
+      "bullets": [
+        "Managed accounts payable end to end — three-way matching of invoices, purchase orders and goods receipts, payment runs and vendor account reconciliations.",
+        "Controlled petty-cash disbursements, expense documentation and monthly reconciliations, and supported purchasing and inventory teams on PO tracking and stock record verification."
+      ]
+    }
+  },
+  "education": {
+    "cert": "VAT Specialist Certificate — SOCPA (Saudi Organization for Chartered and Professional Accountants)",
+    "degree": "Bachelor of Commerce, Accounting — Menoufia University, 2013 — Grade: Very Good with Honours",
+    "languages": "Arabic (Native) • English (Advanced — professional working proficiency)",
+    "work": "Saudi residency (Iqama) — transferable, available for immediate transfer"
+  },
+  "tracks": {
+    "accounting_manager": {
+      "tagline": "Financial Reporting & KSA Tax Compliance",
+      "summary_rest": "Strong record of closing the books on time, detecting and correcting accounting misstatements before they reach the auditor, and handling ZATCA compliance across VAT, Withholding Tax, Zakat and Income Tax. SOCPA-certified VAT Specialist. Experienced across semi-government, healthcare, contracting and multi-entity commercial environments, ERP-driven finance operations (Odoo, Oracle, Dynamics) and advanced Excel financial modelling, with continuous automation of recurring finance work and applied use of AI tools for standards and tax research, document review and reporting.",
+      "achievements": ["team", "close", "misstatements", "returns", "portfolio"],
+      "competencies": ["reporting", "tax", "audit", "systems", "ai"],
+      "experience": ["takamol", "binsalamah", "rashof", "alrazi", "binsammar"],
+      "evidence_en": "At Rashof Company I led a team of up to 15 across the full accounting cycle for a SAR 60 million business and cut the monthly close from 10 to 5 working days. At Takamol I currently own the reconciliation cycle and audit-ready schedules for a semi-government group, and I have caught and corrected more than SAR 1.5 million of misstatements before they reached the auditor.",
+      "evidence_ar": "في شركة رشوف قُدت فريقاً من 15 موظفاً عبر الدورة المحاسبية الكاملة لنشاط بحجم 60 مليون ريال، وخفّضت إقفال الشهر من 10 إلى 5 أيام عمل. وفي تكامل أتولى حالياً دورة التسويات والجداول الجاهزة للمراجعة لمجموعة شبه حكومية، وقد اكتشفت وصحّحت أخطاء محاسبية تجاوزت 1.5 مليون ريال قبل وصولها إلى المراجع الخارجي."
+    },
+    "tax_zakat": {
+      "tagline": "VAT · WHT · Zakat · Income Tax | SOCPA VAT Specialist",
+      "summary_rest": "Prepares and reviews returns for multiple entities, reconciles declared figures to the general ledger, assembles the supporting documentation, and handles ZATCA queries, audits and assessments. Combines that with a financial-reporting background that makes tax positions defensible against the underlying books. Experienced across semi-government, healthcare, contracting and multi-entity commercial environments, ERP-driven finance operations (Odoo, Oracle, Dynamics) and advanced Excel modelling, with applied use of AI tools to research standards and tax guidance and review documents.",
+      "achievements": ["returns", "misstatements", "portfolio", "team", "close"],
+      "competencies": ["tax", "audit", "reporting", "ai", "systems"],
+      "experience": ["takamol", "binsalamah", "rashof", "alrazi", "binsammar"],
+      "evidence_en": "I file and review more than 40 VAT and Withholding Tax returns a year alongside Zakat and Income Tax declarations, with a 100% on-time record and no penalties. I reconcile every declared figure to the general ledger, prepare the documentation ZATCA asks for, and have handled its queries, audits and assessments directly. I hold the SOCPA VAT Specialist certificate.",
+      "evidence_ar": "أُعدّ وأراجع أكثر من 40 إقرار ضريبة قيمة مضافة واستقطاع سنوياً إلى جانب إقرارات الزكاة وضريبة الدخل، بسجل التزام 100% دون أي غرامات. أطابق كل رقم مُعلن مع دفتر الأستاذ العام، وأجهّز المستندات التي تطلبها هيئة الزكاة والضريبة والجمارك، وتعاملت مباشرة مع استفساراتها وفحوصها وربوطها. وأحمل شهادة أخصائي ضريبة القيمة المضافة من الهيئة السعودية للمراجعين والمحاسبين."
+    },
+    "controller": {
+      "tagline": "IFRS Reporting · Consolidation · Audit Readiness",
+      "summary_rest": "Closes the books on a fixed timetable, keeps external-audit adjustments immaterial by catching errors before the statements are issued, and reconciles high-volume transaction-based revenue back to the general ledger. SOCPA-certified VAT Specialist. Experienced across semi-government, healthcare, contracting and multi-entity commercial environments, ERP-driven finance operations (Odoo, Oracle, Dynamics) and advanced Excel financial modelling, with continuous automation of recurring finance work and applied use of AI tools for standards and tax research, document review and reporting.",
+      "achievements": ["close", "misstatements", "team", "returns", "automation"],
+      "competencies": ["reporting", "audit", "tax", "systems", "ai"],
+      "experience": ["takamol", "binsalamah", "rashof", "alrazi", "binsammar"],
+      "evidence_en": "I prepare and review IFRS-based financial statements, run month-end and year-end close on a fixed timetable, and handle multi-entity consolidation and eliminations. At Rashof Company I cut the monthly close from 10 to 5 working days; at Takamol I reconcile high-volume platform revenue to the ledger and have kept external-audit adjustments immaterial by correcting more than SAR 1.5 million of misstatements before issuance.",
+      "evidence_ar": "أُعدّ وأراجع القوائم المالية وفق المعايير الدولية، وأدير الإقفال الشهري والسنوي وفق جدول ثابت، وأتولى توحيد القوائم وحذف المعاملات البينية لعدة كيانات. في شركة رشوف خفّضت إقفال الشهر من 10 إلى 5 أيام عمل، وفي تكامل أطابق إيرادات المنصات عالية الحجم مع الأستاذ العام وأبقيت تعديلات المراجع الخارجي غير جوهرية بتصحيح أخطاء تجاوزت 1.5 مليون ريال قبل إصدار القوائم."
+    },
+    "finance_manager": {
+      "tagline": "Financial Controller | Tax & Zakat Manager",
+      "summary_rest": "Has led a team of up to 15 staff, owns the close and the cash-flow forecast, and detects and corrects accounting misstatements before they reach the auditor. SOCPA-certified VAT Specialist. Experienced across semi-government, healthcare, contracting and multi-entity commercial environments, ERP-driven finance operations (Odoo, Oracle, Dynamics) and advanced Excel financial modelling, with continuous automation of recurring finance work and applied use of AI tools for standards and tax research, document review and reporting.",
+      "achievements": ["team", "close", "returns", "misstatements", "automation"],
+      "competencies": ["reporting", "tax", "ai", "audit", "systems"],
+      "experience": ["takamol", "binsalamah", "rashof", "alrazi", "binsammar"],
+      "evidence_en": "I combine financial control with hands-on tax ownership: I have led a finance team of up to 15, cut the monthly close from 10 to 5 working days, produced rolling cash-flow forecasts that guided payment prioritisation, and filed 40+ VAT and WHT returns a year with no penalties. I currently support the finance function of a semi-government group while heading the bookkeeping department of a licensed CPA firm.",
+      "evidence_ar": "أجمع بين الرقابة المالية والإدارة المباشرة للملف الضريبي: قُدت فريقاً مالياً من 15 موظفاً، وخفّضت إقفال الشهر من 10 إلى 5 أيام عمل، وأعددت توقعات تدفق نقدي متجددة وجّهت أولويات السداد، وقدّمت أكثر من 40 إقرار قيمة مضافة واستقطاع سنوياً دون غرامات. وأدعم حالياً الإدارة المالية لمجموعة شبه حكومية وأرأس في الوقت نفسه قسم مسك الدفاتر في مكتب محاسبة قانوني مرخّص."
+    },
+    "practice": {
+      "tagline": "CPA-Firm Department Lead | 20+ Client Entities",
+      "summary_rest": "Reviews client VAT and Withholding Tax returns before submission, sets the department's bookkeeping and quality-control standards, and prepares client files for audit. SOCPA-certified VAT Specialist with direct ZATCA experience on queries, audits and assessments, and a parallel consulting engagement with a semi-government group. Experienced across ERP-driven finance operations (Odoo, Oracle, Dynamics) and advanced Excel modelling, with applied use of AI tools for standards research, document review and bilingual drafting.",
+      "achievements": ["portfolio", "returns", "misstatements", "team", "close"],
+      "competencies": ["tax", "audit", "reporting", "ai", "systems"],
+      "experience": ["binsalamah", "takamol", "rashof", "alrazi", "binsammar"],
+      "evidence_en": "I head the bookkeeping department of Bin Salamah & Al-Zamil CPAs, running an outsourced portfolio of 20+ client entities across services, trading, contracting and healthcare, reviewing client VAT and WHT returns before submission and preparing client files for audit. Before that I led an in-house team of 15 as Accounting Manager, so I understand the client's side of the engagement as well as the firm's.",
+      "evidence_ar": "أرأس قسم مسك الدفاتر في مكتب بن سلامة والزامل محاسبون قانونيون، وأدير محفظة خارجية تضم أكثر من 20 منشأة عميلة في الخدمات والتجارة والمقاولات والرعاية الصحية، وأراجع إقرارات القيمة المضافة والاستقطاع للعملاء قبل تقديمها وأجهّز ملفاتهم للمراجعة. وقبل ذلك قُدت فريقاً داخلياً من 15 موظفاً كمدير حسابات، لذا أفهم جانب العميل كما أفهم جانب المكتب."
+    }
+  }
+}
