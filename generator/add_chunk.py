@@ -40,10 +40,18 @@ for p in glob.glob(os.path.join(existing_dir, "*.json")) + glob.glob(os.path.joi
 norm = lambda u: re.sub(r"[?#].*$", "", (u or "").strip().lower()).rstrip("/")
 
 
+AR_MAP = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ى": "ي", "ة": "ه", "ـ": ""})
+
+
+def _n(s):
+    s = str(s or "").lower().translate(AR_MAP)
+    return re.sub(r"[^\w]+", " ", s, flags=re.UNICODE).strip()
+
+
 def key(d):
-    t = re.sub(r"[^a-z0-9]+", " ", str(d.get("title", "")).lower()).strip()
-    t = re.sub(r"\b(riyadh|ksa|saudi arabia|jeddah|dammam|khobar|dhahran)\b", "", t).strip()
-    c = re.sub(r"[^a-z0-9]+", " ", str(d.get("company", "")).lower()).split()[:1]
+    t = _n(d.get("title"))
+    t = re.sub(r"\b(riyadh|ksa|saudi arabia|jeddah|dammam|khobar|dhahran|الرياض|جده|الدمام|الخبر)\b", "", t).strip()
+    c = _n(d.get("company")).split()[:2]
     return t + "|" + " ".join(c)
 
 
