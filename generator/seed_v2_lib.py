@@ -8,10 +8,9 @@ import json, re, sys, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 old = {}
-base = json.load(open(os.path.join(HERE, "base.json")))
+BASE_PATH = globals().get("BASE_PATH") or os.path.join(HERE, "base.json")
+base = json.load(open(BASE_PATH))
 
-OUT = os.path.join(HERE, "seed_v2")
-os.makedirs(OUT, exist_ok=True)
 
 CITY = {"riyadh": "الرياض", "jeddah": "جدة", "dammam": "الدمام", "khobar": "الخبر", "al khobar": "الخبر", "al-khobar": "الخبر",
         "dhahran": "الظهران", "jubail": "الجبيل", "makkah": "مكة", "mecca": "مكة", "madinah": "المدينة", "medina": "المدينة",
