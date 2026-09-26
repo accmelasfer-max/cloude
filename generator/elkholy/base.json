@@ -1,0 +1,25 @@
+{
+  "name": "AHMED ELKHOLY",
+  "signature_en": "Kind regards,\nAhmed Elkholy\n+966 59 419 3429 · elkholy0103@gmail.com",
+  "signature_ar": "مع خالص التقدير،\nأحمد عبدالنبي الخولي\n+966 59 419 3429 · elkholy0103@gmail.com",
+  "closing_en": "I am based in Riyadh and available to start promptly. My CV is attached and I would welcome a conversation about how I can contribute to ",
+  "closing_ar": "أنا مقيم في الرياض ومتاح للبدء في وقت قريب. مرفق سيرتي الذاتية، ويسعدني التحدث عن كيفية إسهامي في ",
+  "tracks": {
+    "general_accountant": {
+      "evidence_en": "I have ten years of full-cycle accounting, the last three in Saudi Arabia: general ledger, month-end close, IFRS financial statements, VAT returns and ZATCA compliance, AP/AR, bank and petty-cash reconciliations and inventory counts. I hold an IFRS certificate and work daily in Odoo, QuickBooks, Zoho Books and advanced Excel, and I have set up chart-of-accounts structures and accounting systems from scratch for two companies.",
+      "evidence_ar": "لديّ عشر سنوات في المحاسبة الكاملة، آخر ثلاث منها في السعودية: الأستاذ العام، الإقفال الشهري، القوائم المالية وفق IFRS، إقرارات ضريبة القيمة المضافة والالتزام بمتطلبات هيئة الزكاة والضريبة والجمارك، الذمم الدائنة والمدينة، تسويات البنوك والعهد، وجرد المخزون. أحمل شهادة IFRS وأعمل يومياً على Odoo وQuickBooks وZoho Books وExcel المتقدم، وأسست دليل الحسابات والنظام المحاسبي من الصفر في شركتين."
+    },
+    "senior_accountant": {
+      "evidence_en": "Across ten years I have owned the books end to end for contracting, e-commerce, car-rental, F&B, transport and trading businesses: closing the month, preparing IFRS financial statements and management reports, filing VAT returns under ZATCA rules, reconciling banks, suppliers and customers, and building the chart of accounts and accounting system where none existed. I hold an IFRS certificate and work in Odoo, QuickBooks, Zoho Books and advanced Excel.",
+      "evidence_ar": "خلال عشر سنوات تولّيت الدفاتر كاملةً في المقاولات والتجارة الإلكترونية وتأجير السيارات والمطاعم والنقل والتجارة: إقفال الشهر، إعداد القوائم المالية وفق IFRS والتقارير الإدارية، تقديم إقرارات ضريبة القيمة المضافة وفق متطلبات الهيئة، تسويات البنوك والموردين والعملاء، وبناء دليل الحسابات والنظام المحاسبي حيث لم يكن موجوداً. أحمل شهادة IFRS وأعمل على Odoo وQuickBooks وZoho Books وExcel المتقدم."
+    },
+    "contracting": {
+      "evidence_en": "In my current role at a contracting and O&M company in Riyadh I prepare progress billings and payment certificates by percentage of completion, allocate materials, labour and subcontractor costs to project cost centres, track WIP and retention, follow up bid and performance letters of guarantee, and report project-level income statements and budget-versus-actual variances to management. I also own VAT returns and ZATCA compliance, and I work in Odoo and advanced Excel.",
+      "evidence_ar": "في عملي الحالي في شركة مقاولات وتشغيل وصيانة بالرياض أُعدّ المستخلصات وشهادات الدفع وفق نسبة الإنجاز، وأوزّع تكاليف المواد والعمالة ومقاولي الباطن على مراكز تكلفة المشاريع، وأتابع الأعمال تحت التنفيذ والمحتجزات وخطابات الضمان الابتدائية والنهائية، وأرفع قوائم دخل على مستوى المشروع وتحليل انحرافات الموازنة للإدارة. كما أتولى إقرارات ضريبة القيمة المضافة والالتزام بمتطلبات الهيئة، وأعمل على Odoo وExcel المتقدم."
+    },
+    "ecommerce_retail": {
+      "evidence_en": "I currently keep the books for four online stores and marketplaces in Riyadh: daily sales reconciled against Mada, Visa/Mastercard, Tabby, Tamara and cash-on-delivery settlements from shipping companies, platform commissions and delivery fees recorded to net profit, inventory counts and COGS tracked to resolve stock variances, and monthly category-profitability reports. Earlier I handled car-rental fleet accounts, restaurant stock counts and trading-company receivables, always with VAT returns under ZATCA rules and Odoo, QuickBooks, Zoho or Daftra as the system.",
+      "evidence_ar": "أتولى حالياً دفاتر أربعة متاجر إلكترونية ومنصات في الرياض: مطابقة المبيعات اليومية مع تسويات مدى وفيزا/ماستركارد وتابي وتمارا والدفع عند الاستلام من شركات الشحن، وتسجيل عمولات المنصات ورسوم التوصيل للوصول إلى صافي الربح، وجرد المخزون ومتابعة تكلفة البضاعة المباعة لمعالجة الفروقات، وتقارير ربحية الفئات شهرياً. وقبلها توليت حسابات أسطول تأجير السيارات وجرد المطاعم وذمم شركات التجارة، دائماً مع إقرارات ضريبة القيمة المضافة وفق متطلبات الهيئة، وعلى Odoo وQuickBooks وZoho وDaftra."
+    }
+  }
+}

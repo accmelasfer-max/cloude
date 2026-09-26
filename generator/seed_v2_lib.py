@@ -55,9 +55,9 @@ def covers(j, ev):
         "Dear Hiring Manager," if g else f"Dear Hiring Team at {co},",
         f"I am writing to apply for the {j['title']} position in {city}. {j['angle_en'].strip()}",
         ev["evidence_en"],
-        "I hold a transferable Saudi Iqama and am available for immediate transfer. My CV is attached and I would welcome a conversation about how I can contribute to "
+        base.get("closing_en", "I hold a transferable Saudi Iqama and am available for immediate transfer. My CV is attached and I would welcome a conversation about how I can contribute to ")
         + ("your organisation." if g else co + "."),
-        "Kind regards,\nMohamed El Asfar\n+966 57 020 5701 · acc.m.elasfar@gmail.com · linkedin.com/in/mhamdi1992",
+        base.get("signature_en", "Kind regards,\nMohamed El Asfar\n+966 57 020 5701 · acc.m.elasfar@gmail.com · linkedin.com/in/mhamdi1992"),
     ])
     ar = None
     if j.get("angle_ar"):
@@ -65,8 +65,8 @@ def covers(j, ev):
             "السادة مسؤولي التوظيف المحترمين،" if g else f"السادة فريق التوظيف في {co} المحترمين،",
             f"أتقدم بطلبي لشغل وظيفة {j['title']} في {j['city']}. {j['angle_ar'].strip()}",
             ev["evidence_ar"],
-            "أحمل إقامة سعودية قابلة للنقل ومتاح للانتقال فوراً. مرفق سيرتي الذاتية، ويسعدني التحدث عن كيفية إسهامي في " + ("منشأتكم." if g else co + "."),
-            "مع خالص التقدير،\nمحمد حمدي الأصفر\n+966 57 020 5701 · acc.m.elasfar@gmail.com",
+            base.get("closing_ar", "أحمل إقامة سعودية قابلة للنقل ومتاح للانتقال فوراً. مرفق سيرتي الذاتية، ويسعدني التحدث عن كيفية إسهامي في ") + ("منشأتكم." if g else co + "."),
+            base.get("signature_ar", "مع خالص التقدير،\nمحمد حمدي الأصفر\n+966 57 020 5701 · acc.m.elasfar@gmail.com"),
         ])
     return en, ar
 

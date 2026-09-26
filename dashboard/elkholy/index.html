@@ -1,0 +1,516 @@
+<title>رادار وظائف الخولي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Committed dark "command center" look — painted explicitly for every theme state. */
+:root{
+  color-scheme:dark;
+  --canvas:#0A1020; --canvas-2:#0E1628; --surface:rgba(20,30,52,.72); --surface-solid:#141E34; --raised:#1A2742; --sunk:#0F182B;
+  --line:rgba(140,160,200,.14); --line-strong:rgba(140,160,200,.28);
+  --ink:#EAF0FA; --muted:#9DA9BF; --faint:#66748E;
+  --gold:#E2B75A; --gold-ink:#1A1405; --gold-soft:rgba(226,183,90,.14); --gold-line:rgba(226,183,90,.45);
+  --blue:#6FB1FF; --blue-soft:rgba(111,177,255,.14); --blue-line:rgba(111,177,255,.45);
+  --good:#5BD98A; --good-soft:rgba(91,217,138,.14); --warn:#F2B75C; --warn-soft:rgba(242,183,92,.14); --bad:#F2807A; --bad-soft:rgba(242,128,122,.14);
+  --ring-track:#233150;
+  --display:"Readex Pro","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --sans:"IBM Plex Sans Arabic","Readex Pro","Segoe UI",Tahoma,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --shadow:0 1px 0 rgba(255,255,255,.03) inset, 0 12px 40px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{background:var(--canvas)}
+body{margin:0;min-height:100%;color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.6;direction:rtl;
+  background:
+    radial-gradient(1100px 520px at 88% -10%, rgba(226,183,90,.13), transparent 60%),
+    radial-gradient(900px 600px at 8% 0%, rgba(111,177,255,.10), transparent 60%),
+    linear-gradient(180deg,var(--canvas-2) 0%,var(--canvas) 40%);}
+a{color:var(--blue)}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+h1,h2,h3{margin:0;line-height:1.3;text-wrap:balance}
+p{margin:0}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+.ltr{direction:ltr;unicode-bidi:isolate}
+.muted{color:var(--muted)}
+[hidden]{display:none!important}
+.glass{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+
+/* ---------- header ---------- */
+.hero{max-width:1320px;margin:0 auto;padding:28px 24px 8px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+.eyebrow{font-size:12px;letter-spacing:.08em;color:var(--gold);font-weight:600;font-family:var(--display)}
+.hero h1{font-family:var(--display);font-size:clamp(28px,3.6vw,40px);font-weight:700;letter-spacing:-.01em;margin-top:4px;
+  background:linear-gradient(90deg,#FFF6DF 0%,#E2B75A 55%,#FFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{color:var(--muted);font-size:15px;margin-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;padding:6px 12px;border:1px solid var(--line-strong);border-radius:999px;background:rgba(255,255,255,.03);color:var(--ink);text-decoration:none;white-space:nowrap}
+.chip.gold{border-color:var(--gold-line);background:var(--gold-soft);color:var(--gold);font-weight:600}
+.chip:hover{border-color:var(--gold-line)}
+
+/* radar */
+.radar-wrap{display:grid;justify-items:center;gap:6px}
+.radar{width:290px;height:290px;position:relative;border-radius:50%;
+  background:radial-gradient(circle at center, rgba(111,177,255,.10) 0%, rgba(111,177,255,.04) 45%, rgba(10,16,32,0) 72%);}
+.radar svg{width:100%;height:100%;display:block;overflow:visible}
+.sweep{position:absolute;inset:14%;border-radius:50%;
+  background:conic-gradient(from 0deg, rgba(226,183,90,0) 0deg, rgba(226,183,90,0) 300deg, rgba(226,183,90,.28) 360deg);
+  animation:spin 9s linear infinite;pointer-events:none;mix-blend-mode:screen}
+@keyframes spin{to{transform:rotate(360deg)}}
+.radar .dot{cursor:pointer;transition:r .15s}
+.radar .dot:hover{r:6.5}
+.radar text{font-family:var(--sans);font-size:10.5px;fill:var(--muted)}
+.radar .cap{font-size:12px;color:var(--muted);text-align:center}
+.radar .cap b{color:var(--ink);font-weight:600}
+.rtip{position:absolute;pointer-events:none;background:var(--surface-solid);border:1px solid var(--line-strong);border-radius:8px;padding:6px 10px;font-size:12px;color:var(--ink);white-space:nowrap;transform:translate(-50%,-130%);box-shadow:var(--shadow);z-index:3}
+
+/* KPIs */
+.kpis{max-width:1320px;margin:0 auto;padding:12px 24px 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.kpi{padding:16px 18px;display:grid;gap:2px;position:relative;overflow:hidden}
+.kpi::after{content:"";position:absolute;inset-inline-end:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(226,183,90,.16),transparent 65%);pointer-events:none}
+.kpi .l{font-size:12.5px;color:var(--muted)}
+.kpi .v{font-family:var(--display);font-size:34px;font-weight:600;line-height:1.1;color:#fff}
+.kpi.gold .v{color:var(--gold)}
+.kpi .s{font-size:12px;color:var(--faint)}
+
+/* charts */
+.charts{max-width:1320px;margin:0 auto;padding:12px 24px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chart{padding:14px 18px 12px}
+.chart h3{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:10px;font-family:var(--display)}
+.bars{display:grid;gap:7px}
+.brow{display:grid;grid-template-columns:118px minmax(0,1fr) 34px;gap:10px;align-items:center;font-size:12.5px}
+.brow .bl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brow .bl .code{font-family:var(--mono);font-size:11px;color:var(--faint);margin-inline-end:6px}
+.brow .bt{height:8px;border-radius:4px;background:var(--ring-track);overflow:hidden;direction:ltr}
+.brow .bt i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,#3E7FCF,var(--blue));transition:width .6s ease}
+.brow .bv{font-family:var(--mono);font-size:12px;color:var(--ink);text-align:left;direction:ltr}
+
+/* ---------- shell ---------- */
+.shell{max-width:1320px;margin:0 auto;padding:16px 24px 80px;display:grid;grid-template-columns:268px minmax(0,1fr);gap:16px;align-items:start}
+.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:grid;gap:12px}
+.panel .ph{display:flex;justify-content:space-between;align-items:center;padding:12px 16px 8px;font-size:13px;font-weight:600;font-family:var(--display)}
+.panel .ph button{all:unset;cursor:pointer;color:var(--gold);font-size:12px;font-weight:500}
+.panel .ph button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.facets{padding:0 8px 8px}
+.facet{display:flex;align-items:center;gap:8px;width:100%;border:0;background:none;text-align:right;padding:7px 10px;border-radius:8px;font-size:13.5px;color:var(--ink)}
+.facet:hover{background:rgba(255,255,255,.04)}
+.facet[aria-pressed="true"]{background:var(--gold-soft);color:var(--gold);font-weight:600;box-shadow:inset 0 0 0 1px var(--gold-line)}
+.facet .n{margin-inline-start:auto;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.facet[aria-pressed="true"] .n{color:inherit}
+.facet .code{font-family:var(--mono);font-size:11px;color:var(--faint);min-width:22px}
+.facet[aria-pressed="true"] .code{color:inherit}
+.rail details{border-top:1px solid var(--line)}
+.rail details summary{cursor:pointer;padding:11px 16px;font-size:13px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;font-family:var(--display)}
+.rail details summary::-webkit-details-marker{display:none}
+.rail details summary::after{content:"+";font-family:var(--mono);color:var(--muted)}
+.rail details[open] summary::after{content:"−"}
+.rail details .body{padding:0 16px 12px;display:grid;gap:8px}
+.qrow{display:grid;gap:4px}
+.qrow .t{font-size:12.5px;font-weight:500}
+.qrow .links{display:flex;flex-wrap:wrap;gap:4px}
+.qrow .links a{font-size:11.5px;padding:2px 8px;border:1px solid var(--line-strong);border-radius:999px;text-decoration:none;color:var(--muted)}
+.qrow .links a:hover{color:var(--gold);border-color:var(--gold-line)}
+.note{font-size:12.5px;color:var(--muted)}
+
+/* ---------- main ---------- */
+.main{display:grid;gap:12px;min-width:0}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:10px 12px}
+.toolbar .grp{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:rgba(255,255,255,.03)}
+.seg button{border:0;background:none;padding:8px 16px;font-size:13px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--gold);color:var(--gold-ink);font-weight:600}
+.search,.selects select{background:rgba(255,255,255,.04);border:1px solid var(--line-strong);border-radius:10px;padding:8px 12px;font-size:13px;color:var(--ink)}
+.search{width:250px;max-width:100%}
+.selects{display:flex;gap:8px;flex-wrap:wrap}
+.selects select option{background:var(--surface-solid);color:var(--ink)}
+.count{font-size:13px;color:var(--muted)}
+
+.list{overflow:hidden}
+.lh{display:grid;grid-template-columns:52px minmax(0,1fr) 84px 118px 136px 40px;gap:12px;align-items:center;padding:10px 18px;border-bottom:1px solid var(--line);font-size:12px;color:var(--faint);font-weight:500}
+.row{border-bottom:1px solid var(--line);transition:background .15s}
+.row:last-child{border-bottom:0}
+.row:hover{background:rgba(255,255,255,.025)}
+.rmain{display:grid;grid-template-columns:52px minmax(0,1fr) 84px 118px 136px 40px;gap:12px;align-items:center;padding:14px 18px}
+.rank{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-family:var(--display);font-size:14px;font-weight:600;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.row[data-top="1"] .rank{background:linear-gradient(135deg,#F3D38A,#C9962E);color:var(--gold-ink);border-color:transparent;box-shadow:0 4px 14px rgba(226,183,90,.35)}
+.title{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;min-width:0}
+.title a{font-family:var(--display);font-weight:600;font-size:15.5px;color:#fff;text-decoration:none;direction:ltr;unicode-bidi:isolate;text-align:right}
+.title a:hover{color:var(--gold)}
+.sub{font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:3px;align-items:center}
+.sub .co{color:var(--ink);font-weight:500;direction:ltr;unicode-bidi:isolate}
+.tag{font-size:11px;padding:1px 8px;border-radius:999px;border:1px solid var(--line-strong);color:var(--muted);white-space:nowrap}
+.tag.new{border-color:rgba(91,217,138,.5);color:var(--good);background:var(--good-soft)}
+.tag.dl{border-color:rgba(242,183,92,.5);color:var(--warn);background:var(--warn-soft)}
+.tier{font-size:11px;padding:2px 9px;border-radius:999px;font-weight:600;white-space:nowrap}
+.tier.high{background:var(--gold-soft);color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold-line)}
+.tier.mid{background:var(--blue-soft);color:var(--blue);box-shadow:inset 0 0 0 1px var(--blue-line)}
+.tier.low{background:rgba(255,255,255,.04);color:var(--muted);box-shadow:inset 0 0 0 1px var(--line-strong)}
+.ring{width:56px;height:56px;position:relative;display:grid;place-items:center;justify-self:center}
+.ring svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:4.5}
+.ring .tr{stroke:var(--ring-track)}
+.ring .fg{stroke:var(--blue);stroke-linecap:round;transition:stroke-dashoffset .6s ease}
+.row[data-tier="high"] .ring .fg{stroke:var(--gold)}
+.ring b{font-family:var(--display);font-size:14px;font-weight:600;color:#fff;position:relative}
+.cv{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;padding:6px 10px;border:1px solid var(--gold-line);border-radius:10px;background:var(--gold-soft);color:var(--ink);white-space:nowrap}
+.cv .code{font-family:var(--mono);font-size:11px;color:var(--gold);font-weight:500}
+.status{border:1px solid var(--line-strong);border-radius:10px;background:rgba(255,255,255,.04);padding:7px 10px;font-size:12.5px;width:100%;color:var(--ink)}
+.status option{background:var(--surface-solid)}
+.row[data-status="applied"] .status{border-color:var(--blue-line);color:var(--blue)}
+.row[data-status="interview"] .status,.row[data-status="offer"] .status{border-color:rgba(91,217,138,.6);color:var(--good);font-weight:600}
+.row[data-status="rejected"] .rmain,.row[data-status="skip"] .rmain{opacity:.45}
+.exp{width:34px;height:34px;border:1px solid var(--line-strong);border-radius:10px;background:rgba(255,255,255,.03);color:var(--muted);display:grid;place-items:center;font-family:var(--mono);font-size:15px}
+.exp[aria-expanded="true"]{background:var(--gold-soft);color:var(--gold);border-color:var(--gold-line)}
+.detail{margin:0 18px 18px;padding:18px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:20px;border:1px solid var(--line);border-radius:12px;background:rgba(10,16,32,.45)}
+.detail h3{font-size:12px;color:var(--gold);font-weight:600;letter-spacing:.04em;margin-bottom:5px;font-family:var(--display)}
+.detail .blk{display:grid;gap:14px}
+.detail .req{font-size:13px;direction:ltr;text-align:left;unicode-bidi:isolate;color:var(--ink)}
+.detail .why{font-size:14px}
+.detail .kv{display:grid;grid-template-columns:auto 1fr;gap:5px 12px;font-size:12.5px;margin:0}
+.detail .kv dt{color:var(--muted)}
+.detail .kv dd{margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:10px;border:1px solid var(--gold);background:linear-gradient(135deg,#F3D38A,#D3A340);color:var(--gold-ink);font-weight:600;font-size:13px;text-decoration:none;box-shadow:0 6px 18px rgba(226,183,90,.22)}
+.btn:hover{filter:brightness(1.05)}
+.btn.ghost{background:rgba(255,255,255,.03);color:var(--gold);box-shadow:none}
+.btn.sm{padding:6px 12px;font-size:12.5px}
+.btn:disabled{opacity:.6;cursor:default}
+.toast{font-size:12.5px;color:var(--muted)}
+.cover{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.65;white-space:pre-wrap;direction:ltr;text-align:left;unicode-bidi:isolate;margin:0;font-family:var(--sans);max-height:280px;overflow:auto;color:var(--ink)}
+.cover[dir="rtl"]{direction:rtl;text-align:right}
+.tabs{display:flex;gap:6px;margin-bottom:8px}
+.tabs button{border:1px solid var(--line-strong);background:transparent;border-radius:999px;padding:3px 12px;font-size:12px;color:var(--muted)}
+.tabs button[aria-pressed="true"]{color:var(--gold);border-color:var(--gold-line);background:var(--gold-soft);font-weight:600}
+.empty{padding:40px 20px;text-align:center;color:var(--muted);font-size:14px}
+.dropped summary{cursor:pointer;font-size:13px;color:var(--muted);padding:8px 4px}
+.dropped table{width:100%;border-collapse:collapse;font-size:12.5px}
+.dropped th,.dropped td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}
+.dropped th{color:var(--faint);font-weight:500;font-size:12px}
+.dropped td.l{direction:ltr;text-align:right;unicode-bidi:isolate}
+.twrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+footer{max-width:1320px;margin:0 auto;padding:0 24px 40px;font-size:12px;color:var(--faint)}
+
+@media (max-width:1080px){
+  .shell{grid-template-columns:1fr}
+  .rail{position:static;order:2;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .charts{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .hero,.kpis,.charts,.shell,footer{padding-inline:16px}
+  .hero{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .chips{justify-content:center}
+  .radar{width:250px;height:250px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpi .v{font-size:28px}
+  .lh{display:none}
+  .rmain{grid-template-columns:44px minmax(0,1fr) 40px;grid-template-areas:"rank title exp" "ring cv cv" "st st st";row-gap:12px}
+  .rank{grid-area:rank}.title-wrap{grid-area:title}.ring{grid-area:ring;justify-self:start}.cvcell{grid-area:cv}.stcell{grid-area:st}.exp{grid-area:exp}
+  .detail{grid-template-columns:1fr;margin:0 12px 14px;padding:14px}
+  .search{width:100%}
+}
+@media (prefers-reduced-motion:reduce){.sweep{animation:none}*{transition:none!important}}
+</style>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">JOB RADAR · الرياض · محدَّث يومياً</div>
+    <h1>رادار وظائف الخولي</h1>
+    <p class="role"><strong style="color:#fff">أحمد عبدالنبي الخولي</strong> — محاسب مالي · IFRS · ضريبة القيمة المضافة وزاتكا · محاسبة مقاولات وتجارة إلكترونية · خبرة +10 سنوات</p>
+    <div class="chips">
+      <span class="chip gold">شهادة IFRS</span>
+      <span class="chip">Odoo · QuickBooks · Zoho · Daftra</span>
+      <span class="chip num">+966 59 419 3429</span>
+      <span class="chip num">elkholy0103@gmail.com</span>
+    </div>
+  </div>
+  <div class="radar-wrap">
+    <div class="radar" id="radar" aria-label="رادار الوظائف: القطاع هو المسار، والقرب من المركز درجة التطابق">
+      <div class="sweep"></div>
+      <svg viewBox="-150 -150 300 300" id="radarSvg"></svg>
+    </div>
+    <p class="cap" id="radarCap">كل نقطة وظيفة · القطاع = المسار · الأقرب للمركز = الأعلى تطابقاً</p>
+  </div>
+</header>
+
+<section class="kpis" aria-label="ملخص">
+  <div class="kpi glass gold"><span class="l">وظائف مفتوحة مطابقة</span><span class="v" id="s-open">—</span><span class="s" id="s-open-s">بعد التحقق من كل إعلان</span></div>
+  <div class="kpi glass"><span class="l">أولوية عالية</span><span class="v" id="s-high">—</span><span class="s">ابدأ بها اليوم</span></div>
+  <div class="kpi glass"><span class="l">نُشرت خلال 7 أيام</span><span class="v" id="s-fresh">—</span><span class="s">أول 72 ساعة هي الأهم</span></div>
+  <div class="kpi glass"><span class="l">قدّمت عليها</span><span class="v" id="s-applied">—</span><span class="s">من سجل الحالة</span></div>
+  <div class="kpi glass"><span class="l">مقابلات وعروض</span><span class="v" id="s-int">—</span><span class="s">حدّث الحالة عند التواصل</span></div>
+</section>
+
+<section class="charts" aria-label="التوزيع">
+  <div class="chart glass"><h3>الوظائف حسب المسار</h3><div class="bars" id="c-track"></div></div>
+  <div class="chart glass"><h3>الوظائف حسب المصدر</h3><div class="bars" id="c-source"></div></div>
+</section>
+
+<div class="shell">
+  <aside class="rail" aria-label="تصفية">
+    <section class="panel glass">
+      <div class="ph"><span>المسار</span><button type="button" id="clearTrack">الكل</button></div>
+      <div class="facets" id="f-track"></div>
+    </section>
+    <section class="panel glass">
+      <div class="ph"><span>المصدر</span><button type="button" id="clearSource">الكل</button></div>
+      <div class="facets" id="f-source"></div>
+    </section>
+    <section class="panel glass">
+      <div class="ph"><span>المدينة</span><button type="button" id="clearCity">الكل</button></div>
+      <div class="facets" id="f-city"></div>
+    </section>
+    <section class="panel glass">
+      <details><summary>بحث يومي بالمسمى</summary><div class="body" id="qlinks"></div></details>
+      <details><summary>كيف تقدّم في دقيقتين</summary>
+        <div class="body note">
+          <p>1. رتّب بالأولوية وابدأ من الأعلى.</p>
+          <p>2. افتح الصف: نزّل السيرة وانسخ رسالة التقديم المكتوبة لهذا الإعلان.</p>
+          <p>3. افتح الإعلان وقدّم، ثم غيّر الحالة إلى «قدّمت».</p>
+          <p>4. الحالة محفوظة وتنعكس في العدادات والرادار.</p>
+        </div>
+      </details>
+    </section>
+  </aside>
+
+  <main class="main">
+    <div class="toolbar glass">
+      <div class="grp">
+        <div class="seg" role="group" aria-label="الترتيب">
+          <button type="button" id="sortP" aria-pressed="true">حسب الأولوية</button>
+          <button type="button" id="sortN" aria-pressed="false">الأحدث نشراً</button>
+        </div>
+        <div class="selects">
+          <select id="fStatus" aria-label="الحالة">
+            <option value="">كل الحالات</option><option value="new">لم أقدّم بعد</option><option value="applied">قدّمت</option>
+            <option value="interview">مقابلة</option><option value="offer">عرض</option><option value="rejected">مرفوض</option><option value="skip">تجاهل</option>
+          </select>
+          <select id="fTier" aria-label="الأولوية">
+            <option value="">كل الأولويات</option><option value="high">عالية</option><option value="mid">متوسطة</option><option value="low">منخفضة</option>
+          </select>
+        </div>
+      </div>
+      <div class="grp"><span class="count" id="count"></span><input class="search" id="fText" type="search" placeholder="شركة، مسمى، مدينة…" aria-label="بحث"></div>
+    </div>
+
+    <div class="list glass">
+      <div class="lh"><span>#</span><span>الوظيفة</span><span>تطابق</span><span>المسار</span><span>الحالة</span><span></span></div>
+      <div id="rows"><div class="empty">جارٍ تحميل الوظائف…</div></div>
+    </div>
+    <details class="dropped" id="dropped" hidden>
+      <summary>وظائف فُحصت واستُبعدت (<span id="dropN">0</span>) — مغلقة، للسعوديين فقط، أو ضعيفة التطابق</summary>
+      <div class="twrap"><table><thead><tr><th>الوظيفة</th><th>الشركة</th><th>السبب</th></tr></thead><tbody id="dropRows"></tbody></table></div>
+    </details>
+  </main>
+</div>
+<footer id="foot"></footer>
+
+<script>
+const TODAY = new Date();
+const TRACKS = {
+  general_accountant:{code:"T1", ar:"محاسب عام",           file:"cv/elkholy.pdf", dl:"Ahmed_Elkholy_CV_Financial_Accountant.pdf", titles:["General Accountant","Financial Accountant","Accountant","GL Accountant"]},
+  senior_accountant: {code:"T2", ar:"محاسب أول",           file:"cv/elkholy.pdf", dl:"Ahmed_Elkholy_CV_Financial_Accountant.pdf", titles:["Senior Accountant","Accounting Supervisor","Chief Accountant"]},
+  contracting:       {code:"T3", ar:"مقاولات ومشاريع",     file:"cv/elkholy.pdf", dl:"Ahmed_Elkholy_CV_Financial_Accountant.pdf", titles:["Project Accountant","Cost Accountant","Contracting Accountant","Cost Control Accountant"]},
+  ecommerce_retail:  {code:"T4", ar:"تجارة إلكترونية وتجزئة", file:"cv/elkholy.pdf", dl:"Ahmed_Elkholy_CV_Financial_Accountant.pdf", titles:["E-commerce Accountant","AR Accountant","AP Accountant","Inventory Accountant","Retail Accountant"]}
+};
+const ORDER = ["general_accountant","senior_accountant","contracting","ecommerce_retail"];
+const STATUS = {new:"لم أقدّم بعد",applied:"قدّمت",interview:"مقابلة",offer:"عرض",rejected:"مرفوض",skip:"تجاهل"};
+const CERT = {none:"لا يشترط شهادة مهنية",preferred:"شهادة مهنية مفضّلة",mandatory:"شهادة مهنية إلزامية"};
+const SEN = {mid:"متوسط",senior:"أول",manager:"مدير",head:"رئيس قسم",director:"مدير عام",junior:"مبتدئ"};
+const TIER_AR = {high:"عالية",mid:"متوسطة",low:"منخفضة"};
+
+let JOBS = [], db = null, sort = "priority";
+const F = { track:null, source:null, city:null };
+const open = new Set(), coverTab = {};
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const enc = encodeURIComponent;
+
+function daysAgo(d){ if(!d) return null; const t = new Date(d+"T00:00:00"); if(isNaN(t)) return null; return Math.max(0, Math.round((TODAY - t)/86400000)); }
+function agoText(d){ const n = daysAgo(d); if(n===null) return "تاريخ غير معروف"; if(n===0) return "اليوم"; if(n===1) return "أمس"; if(n<7) return `منذ ${n} أيام`; if(n<14) return "منذ أسبوع"; if(n<30) return `منذ ${Math.round(n/7)} أسابيع`; return `منذ ${Math.round(n/30)} شهر`; }
+function priority(j){ const n = daysAgo(j.posted_date); const rec = n===null ? 40 : Math.max(0, 1 - n/30)*100; return Math.round((j.fit_score||0)*0.75 + rec*0.25); }
+function tier(p){ return p>=75?"high":p>=60?"mid":"low"; }
+
+/* count-up for KPI values */
+function setNum(el, v){ const from = parseInt(el.textContent)||0; if(matchMedia("(prefers-reduced-motion: reduce)").matches || from===v){ el.textContent = v; return; }
+  const t0 = performance.now(), dur = 700; (function step(t){ const k = Math.min(1,(t-t0)/dur), e = 1-Math.pow(1-k,3); el.textContent = Math.round(from+(v-from)*e); if(k<1) requestAnimationFrame(step); })(t0); }
+
+/* radar: sector per track, radius by fit */
+function renderRadar(){
+  const svg = $("#radarSvg"), R = 128, n = ORDER.length;
+  let g = "";
+  [0.33,0.66,1].forEach(f => g += `<circle r="${R*f}" fill="none" stroke="rgba(140,160,200,.22)" stroke-width="1" ${f<1?'stroke-dasharray="3 4"':""}/>`);
+  ORDER.forEach((k,i) => { const a = (i/n)*2*Math.PI - Math.PI/2; g += `<line x1="0" y1="0" x2="${(R*Math.cos(a)).toFixed(1)}" y2="${(R*Math.sin(a)).toFixed(1)}" stroke="rgba(140,160,200,.22)" stroke-width="1"/>`;
+    const m = a + Math.PI/n, lx = (R+16)*Math.cos(m), ly = (R+16)*Math.sin(m);
+    g += `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle" dominant-baseline="middle">${TRACKS[k].code} ${esc(TRACKS[k].ar)}</text>`; });
+  g += `<circle r="3" fill="var(--gold)"/>`;
+  const list = JOBS.filter(j => !["rejected","skip"].includes(j.status));
+  list.forEach(j => { const i = ORDER.indexOf(j.track); if(i<0) return;
+    const h = hash(j._id), ang = (i/n)*2*Math.PI - Math.PI/2 + (0.12 + 0.76*(h%1000)/1000)*(2*Math.PI/n);
+    const r = R*(0.12 + 0.86*(1 - Math.max(0,Math.min(100,j.fit_score))/100));
+    const col = j.tier==="high"?"var(--gold)":j.tier==="mid"?"var(--blue)":"rgba(157,169,191,.7)";
+    const glow = j.tier==="high"?`<circle class="halo" cx="${(r*Math.cos(ang)).toFixed(1)}" cy="${(r*Math.sin(ang)).toFixed(1)}" r="9" fill="var(--gold)" opacity=".18"/>`:"";
+    g += glow + `<circle class="dot" data-id="${esc(j._id)}" cx="${(r*Math.cos(ang)).toFixed(1)}" cy="${(r*Math.sin(ang)).toFixed(1)}" r="${j.tier==="high"?5:4}" fill="${col}" stroke="rgba(10,16,32,.9)" stroke-width="1.2"><title>${esc(j.title)} — ${esc(j.company)} · تطابق ${j.fit_score}</title></circle>`; });
+  svg.innerHTML = g;
+  $("#radarCap").innerHTML = JOBS.length ? `<b>${list.length}</b> وظيفة تحت الرادار · القطاع = السيرة · الأقرب للمركز = الأعلى تطابقاً` : "كل نقطة وظيفة · القطاع = المسار · الأقرب للمركز = الأعلى تطابقاً";
+  svg.querySelectorAll(".dot").forEach(d => d.addEventListener("click", () => { const id = d.dataset.id; open.add(id); F.track=null; F.source=null; F.city=null; $("#fStatus").value=""; $("#fTier").value=""; $("#fText").value=""; render(); const el = document.querySelector(`.row[data-id="${CSS.escape(id)}"]`); el && el.scrollIntoView({behavior:"smooth",block:"center"}); }));
+}
+function hash(s){ let h=7; for(const c of String(s)) h = (h*31 + c.charCodeAt(0)) >>> 0; return h; }
+
+function bars(el, pairs, labelFn){
+  const max = Math.max(1, ...pairs.map(p=>p[1]));
+  el.innerHTML = pairs.map(([k,v]) => `<div class="brow"><span class="bl">${labelFn(k)}</span><span class="bt"><i style="width:${(v/max*100).toFixed(1)}%"></i></span><span class="bv">${v}</span></div>`).join("");
+}
+function renderCharts(){
+  const ct = {}, cs = {}; JOBS.forEach(j => { ct[j.track]=(ct[j.track]||0)+1; cs[j.source]=(cs[j.source]||0)+1; });
+  bars($("#c-track"), ORDER.map(k=>[k,ct[k]||0]), k => `<span class="code">${TRACKS[k].code}</span>${TRACKS[k].ar}`);
+  bars($("#c-source"), Object.entries(cs).sort((a,b)=>b[1]-a[1]).slice(0,6), k => `<span class="ltr">${esc(k)}</span>`);
+}
+
+function facet(el, key, values, labelFn){
+  const counts = {}; JOBS.forEach(j => { const v = j[key]||"—"; counts[v]=(counts[v]||0)+1; });
+  const keys = values || Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
+  el.innerHTML = keys.filter(k => values || counts[k]).map(k => `<button type="button" class="facet" data-k="${esc(k)}" aria-pressed="${F[key]===k}">${labelFn(k)}<span class="n">${counts[k]||0}</span></button>`).join("");
+  el.querySelectorAll(".facet").forEach(b => b.onclick = () => { F[key] = F[key]===b.dataset.k ? null : b.dataset.k; render(); });
+}
+function renderFacets(){
+  facet($("#f-track"), "track", ORDER, k => `<span class="code">${TRACKS[k].code}</span><span>${TRACKS[k].ar}</span>`);
+  facet($("#f-source"), "source", null, k => `<span class="ltr">${esc(k)}</span>`);
+  facet($("#f-city"), "city", null, k => `<span>${esc(k)}</span>`);
+}
+function renderQuick(){
+  const slug = q => q.toLowerCase().replace(/&/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  $("#qlinks").innerHTML = ORDER.flatMap(k => TRACKS[k].titles.map(q => { const qq=q.replace(" (firm)","");
+    return `<div class="qrow"><span class="t ltr">${esc(q)} <span class="muted">· ${TRACKS[k].code}</span></span><div class="links">
+      <a target="_blank" rel="noopener" href="https://www.linkedin.com/jobs/search/?keywords=${enc(qq)}&location=${enc("Saudi Arabia")}&f_TPR=r604800">LinkedIn</a>
+      <a target="_blank" rel="noopener" href="https://www.bayt.com/en/saudi-arabia/jobs/${slug(qq)}-jobs/">Bayt</a>
+      <a target="_blank" rel="noopener" href="https://sa.indeed.com/jobs?q=${enc(qq)}&l=Riyadh&fromage=14">Indeed</a>
+      <a target="_blank" rel="noopener" href="https://www.naukrigulf.com/${slug(qq)}-jobs-in-saudi-arabia">Naukrigulf</a>
+      <a target="_blank" rel="noopener" href="https://www.gulftalent.com/saudi-arabia/jobs/search?keywords=${enc(qq)}">GulfTalent</a></div></div>`; })).join("");
+}
+
+function filtered(){
+  const st = $("#fStatus").value, tr = $("#fTier").value, tx = $("#fText").value.trim().toLowerCase();
+  return JOBS.filter(j => (!F.track || j.track===F.track) && (!F.source || j.source===F.source) && (!F.city || j.city===F.city)
+    && (!st || (j.status||"new")===st) && (!tr || j.tier===tr)
+    && (!tx || [j.title,j.company,j.city,j.source,j.requirements_en].join(" ").toLowerCase().includes(tx)))
+  .sort((a,b) => sort==="priority" ? (b.priority-a.priority || (b.posted_date||"").localeCompare(a.posted_date||""))
+                                    : ((b.posted_date||"").localeCompare(a.posted_date||"") || b.priority-a.priority));
+}
+function renderStats(){
+  setNum($("#s-open"), JOBS.length);
+  setNum($("#s-high"), JOBS.filter(j=>j.tier==="high").length);
+  setNum($("#s-fresh"), JOBS.filter(j=>{const n=daysAgo(j.posted_date);return n!==null&&n<=7;}).length);
+  setNum($("#s-applied"), JOBS.filter(j=>["applied","interview","offer"].includes(j.status)).length);
+  setNum($("#s-int"), JOBS.filter(j=>["interview","offer"].includes(j.status)).length);
+}
+
+function ring(v){ const r=24, c=2*Math.PI*r, off = c*(1-Math.max(0,Math.min(100,v))/100);
+  return `<div class="ring" title="تطابق ${v} من 100"><svg viewBox="0 0 56 56"><circle class="tr" cx="28" cy="28" r="${r}"/><circle class="fg" cx="28" cy="28" r="${r}" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}"/></svg><b>${v}</b></div>`; }
+
+function row(j, i){
+  const t = TRACKS[j.track] || {code:"—",ar:""}, s = j.status||"new", n = daysAgo(j.posted_date), isOpen = open.has(j._id);
+  return `<article class="row" data-id="${esc(j._id)}" data-status="${s}" data-tier="${j.tier}" data-top="${i<3 && sort==="priority" && j.tier==="high" ? 1 : 0}">
+    <div class="rmain">
+      <span class="rank">${i+1}</span>
+      <div class="title-wrap">
+        <div class="title"><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a><span class="tier ${j.tier}">أولوية ${TIER_AR[j.tier]}</span>${n!==null&&n<=3?`<span class="tag new">جديد</span>`:""}${j.deadline?`<span class="tag dl">يغلق ${esc(j.deadline)}</span>`:""}</div>
+        <div class="sub"><span class="co">${esc(j.company)}</span><span>${esc(j.city)}</span><span class="tag ltr">${esc(j.source)}</span><span title="${esc(j.posted_date||"")}">${agoText(j.posted_date)}</span>${j.language==="ar"?`<span class="tag">إعلان عربي</span>`:""}${j.live==="unknown"?`<span class="tag">لم يُتحقق من الرابط</span>`:""}</div>
+      </div>
+      ${ring(j.fit_score||0)}
+      <div class="cvcell"><span class="cv"><span class="code">${t.code}</span>${t.ar}</span></div>
+      <div class="stcell"><select class="status" data-id="${esc(j._id)}" aria-label="حالة التقديم" ${db?"":"disabled"}>${Object.entries(STATUS).map(([v,l])=>`<option value="${v}" ${v===s?"selected":""}>${l}</option>`).join("")}</select></div>
+      <button type="button" class="exp" data-id="${esc(j._id)}" aria-expanded="${isOpen}" aria-label="تفاصيل">${isOpen?"−":"+"}</button>
+    </div>
+    ${isOpen ? detail(j, t) : ""}
+  </article>`;
+}
+function detail(j, t){
+  const tab = coverTab[j._id] || "en", hasAr = !!j.cover_ar;
+  return `<div class="detail">
+    <div class="blk">
+      <div><h3>لماذا تناسبك</h3><p class="why">${esc(j.fit_reason_ar)}</p></div>
+      <div><h3>المتطلبات كما وردت في الإعلان</h3><p class="req">${esc(j.requirements_en)}</p></div>
+      <dl class="kv">
+        <dt>المستوى</dt><dd>${esc(SEN[j.seniority]||j.seniority||"—")}${j.years_required?` · ${esc(j.years_required)}`:""}</dd>
+        <dt>الشهادة</dt><dd>${esc(CERT[j.cert_required]||"—")}${j.cert_note?` — ${esc(j.cert_note)}`:""}</dd>
+        ${j.industry_mandatory?`<dt>قطاع إلزامي</dt><dd>${esc(j.industry_mandatory)}</dd>`:""}
+        <dt>الأولوية</dt><dd><span class="num">${j.priority}</span> = تطابق <span class="num">${j.fit_score}</span> × 0.75 + حداثة النشر × 0.25</dd>
+      </dl>
+      <div class="actions">
+        <a class="btn" href="${esc(j.url)}" target="_blank" rel="noopener">افتح الإعلان وقدّم ↗</a>
+        <button type="button" class="btn ghost" data-dl="${esc(j._id)}">تنزيل السيرة PDF</button>
+        <span class="toast" data-toast="${esc(j._id)}"></span>
+      </div>
+    </div>
+    <div class="blk">
+      <div>
+        <h3>رسالة التقديم الجاهزة</h3>
+        ${hasAr?`<div class="tabs"><button type="button" data-tab="en" data-id="${esc(j._id)}" aria-pressed="${tab==="en"}">English</button><button type="button" data-tab="ar" data-id="${esc(j._id)}" aria-pressed="${tab==="ar"}">عربي</button></div>`:""}
+        <pre class="cover" ${tab==="ar"?'dir="rtl"':""} id="cover-${esc(j._id)}">${esc(tab==="ar"?j.cover_ar:j.cover_en)}</pre>
+      </div>
+      <div class="actions"><button type="button" class="btn ghost sm" data-copy="${esc(j._id)}">نسخ الرسالة</button><span class="toast" data-ctoast="${esc(j._id)}"></span></div>
+    </div>
+  </div>`;
+}
+
+function render(){
+  renderFacets(); renderStats(); renderCharts(); renderRadar();
+  const list = filtered();
+  $("#count").textContent = JOBS.length ? `${list.length} من ${JOBS.length}` : "";
+  if(!JOBS.length) return;
+  $("#rows").innerHTML = list.length ? list.map(row).join("") : `<div class="empty">لا نتائج بهذه الفلاتر.</div>`;
+  bind();
+}
+function bind(){
+  document.querySelectorAll(".exp").forEach(b => b.onclick = () => { const id=b.dataset.id; open.has(id)?open.delete(id):open.add(id); render(); });
+  document.querySelectorAll("[data-tab]").forEach(b => b.onclick = () => { coverTab[b.dataset.id]=b.dataset.tab; render(); });
+  document.querySelectorAll("[data-copy]").forEach(b => b.onclick = async () => {
+    const j = JOBS.find(x=>x._id===b.dataset.copy), txt = (coverTab[j._id]==="ar" && j.cover_ar) ? j.cover_ar : j.cover_en;
+    const toast = document.querySelector(`[data-ctoast="${b.dataset.copy}"]`);
+    try{ await navigator.clipboard.writeText(txt); toast.textContent = "نُسخت."; }
+    catch(e){ const pre=document.getElementById("cover-"+j._id); const r=document.createRange(); r.selectNodeContents(pre); const s=getSelection(); s.removeAllRanges(); s.addRange(r); toast.textContent="حُدد النص، اضغط Ctrl+C."; }
+  });
+  document.querySelectorAll("[data-dl]").forEach(b => b.onclick = async () => {
+    const j = JOBS.find(x=>x._id===b.dataset.dl), t = TRACKS[j.track], toast = document.querySelector(`[data-toast="${b.dataset.dl}"]`);
+    b.disabled = true; toast.textContent = "جارٍ التجهيز…";
+    try{
+      const dl = await window.claude?.use?.("downloads");
+      if(!dl){ toast.textContent = "التنزيل متاح عند فتح الصفحة من claude.ai."; return; }
+      const blob = await (await fetch(t.file)).blob();
+      await dl.save({filename:t.dl, data:blob}); toast.textContent = "تم الحفظ.";
+    }catch(e){ toast.textContent = e && e.code==="declined" ? "أُلغي." : "تعذّر التنزيل."; }
+    finally{ b.disabled = false; }
+  });
+  document.querySelectorAll(".status").forEach(sel => sel.onchange = async () => {
+    const j = JOBS.find(x=>x._id===sel.dataset.id), prev = j.status, v = sel.value; j.status = v; render();
+    try{ await db.doc("jobs/"+j._id).update({status:v, updatedAt:new Date().toISOString()}); }
+    catch(e){ j.status = prev; render(); $("#foot").textContent = "لم يُحفظ تغيير الحالة. تحقق من صلاحية التعديل."; }
+  });
+}
+
+["#fStatus","#fTier","#fText"].forEach(s => $(s).addEventListener("input", render));
+$("#sortP").onclick = () => { sort="priority"; $("#sortP").setAttribute("aria-pressed","true"); $("#sortN").setAttribute("aria-pressed","false"); render(); };
+$("#sortN").onclick = () => { sort="newest"; $("#sortN").setAttribute("aria-pressed","true"); $("#sortP").setAttribute("aria-pressed","false"); render(); };
+$("#clearTrack").onclick = () => { F.track=null; render(); };
+$("#clearSource").onclick = () => { F.source=null; render(); };
+$("#clearCity").onclick = () => { F.city=null; render(); };
+renderQuick(); renderFacets(); renderRadar(); renderCharts();
+
+(async () => {
+  try{ db = await window.claude?.use?.("db"); }catch(e){ db = null; }
+  if(!db){ $("#rows").innerHTML = `<div class="empty">قائمة الوظائف تظهر عند فتح الصفحة من حسابك في claude.ai.</div>`; return; }
+  db.collection("jobs").onSnapshot(snap => {
+    JOBS = snap.docs.map(d => { const j = {...d.data(), _id:d.id}; j.priority = priority(j); j.tier = tier(j.priority); return j; });
+    if(!JOBS.length) $("#rows").innerHTML = `<div class="empty">لا توجد وظائف محفوظة بعد.</div>`;
+    render();
+  }, () => { $("#rows").innerHTML = `<div class="empty">تعذّر تحميل الوظائف. أعد تحميل الصفحة.</div>`; });
+  db.doc("meta/sweep").onSnapshot(s => {
+    const m = s.exists ? s.data() : null; if(!m) return;
+    $("#foot").textContent = `آخر مسح: ${m.today} · المصادر: ${(m.sources||[]).join("، ")} · جُمع ${m.total_found} إعلاناً، فُحص ${m.verified} فريداً، وبقي ${m.kept} بعد التحقق.`;
+    const D = m.dropped || [];
+    if(D.length){ $("#dropped").hidden = false; $("#dropN").textContent = D.length;
+      $("#dropRows").innerHTML = D.map(d => `<tr><td class="l"><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.title)}</a></td><td class="l">${esc(d.company)}</td><td>${d.saudi_only?"للسعوديين فقط":d.live==="no"?"الإعلان مغلق":d.seniority==="junior"?"مستوى مبتدئ":`تطابق ${d.fit_score}`}</td></tr>`).join(""); }
+  }, () => {});
+})();
+</script>
